@@ -1,27 +1,27 @@
 {
-  "name": "sketch-flowexporter",
-  "description": "A Sketch plugin that exports prototype flows built with Sketch 49+ to HTML.",
-  "version": "0.2.5",
+  "name": "sketch-map",
+  "description": "Recharge your design sprints with Sketch Map. Export your Sketch prototypes as customizable flow diagrams. Print and share bird's eye views of your Sketch prototypes.",
+  "version": "0.0.1",
   "engines": {
     "sketch": ">=49.0.0"
   },
   "skpm": {
-    "name": "Flow Exporter",
+    "name": "Sketch Map",
     "manifest": "src/manifest.json",
-    "main": "FlowExporter.sketchplugin",
+    "main": "SketchMap.sketchplugin",
     "assets": [
       "assets/**/*"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/romannurik/Sketch-FlowExporter.git"
+    "url": "https://github.com/she1991/Sketch-Map"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/romannurik/Sketch-FlowExporter/issues"
+    "url": "https://github.com/she1991/Sketch-Map/pulls"
   },
-  "homepage": "https://github.com/romannurik/Sketch-FlowExporter#readme",
+  "homepage": "https://github.com/she1991/Sketch-Map#readme",
   "scripts": {
     "nibs": "ibtool --compile assets/Prefs.nib src/Prefs.xib",
     "build": "npm run nibs && skpm-build",
@@ -32,7 +32,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
     "@skpm/builder": "^0.5.3"
   },
-  "author": "Roman Nurik <roman@nurik.net>",
+  "author": "Akash Shetye <a.s@utexas.edu>",
   "dependencies": {
     "@skpm/dialog": "^0.2.6",
     "@skpm/fs": "^0.1.2",
