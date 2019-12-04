@@ -1,26 +1,26 @@
 {
-  "identifier" : "net.nurik.roman.sketch.flowexporter",
+  "identifier" : "net.shetye.akash.sketch.map",
   "compatibleVersion": 49,
   "bundleVersion": 1,
   "icon": "icon.png",
   "commands": [
     {
-      "name": "Export Prototype to HTML",
+      "name": "Export Sketch Map to HTML",
       "identifier": "export-html",
       "script": "./command-export-html.js",
-      "description" : "Export prototype flow designed in Sketch to an HTML file.",
+      "description" : "Export Sketch Map flow designed in Sketch to an HTML file.",
       "icon" : "icon.png"
     },
     {
-      "name": "Set Prototype Export Options",
+      "name": "Set Export Options",
       "identifier": "export-options",
       "script": "./command-export-options.js",
-      "description" : "Customize options for exporting your prototype flow to HTML.",
+      "description" : "Customize options for exporting your Sketch Map flow to HTML.",
       "icon" : "icon.png"
     }
   ],
   "menu": {
-    "title": "🗳 Flow Exporter",
+    "title": "Sketch Map",
     "items": [
       "export-html",
       "export-options"
