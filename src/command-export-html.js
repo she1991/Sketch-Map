@@ -106,7 +106,7 @@ export default function(context) {
     prototypeData.pages = pageList;
   }
 
-  let rootPath = dialog.showSaveDialog(document.sketchObject, {
+  let rootPath = dialog.showSaveDialogSync(document.sketchObject, {
     defaultPath: defaultExportPath,
     nameFieldLabel: 'Export directory name:',
     buttonLabel: 'Export',
@@ -117,8 +117,9 @@ export default function(context) {
   }
 
   // confirm overwrite
+  console.log(rootPath);
   if (fs.existsSync(rootPath)) {
-    let confirm = (0 === dialog.showMessageBox(document.sketchObject, {
+    let confirm = (0 === dialog.showMessageBoxSync(document.sketchObject, {
       type: 'question',
       buttons: ['Overwrite', 'Cancel'],
       title: 'Directory exists, overwrite?',
