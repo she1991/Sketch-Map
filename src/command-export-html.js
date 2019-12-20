@@ -160,6 +160,10 @@ export default function(context) {
     // export the artboard image to PNG
     let {hasFixedLayers} = exportArtboard(context, rootPath, artboard, viewportSize);
 
+    // get x and y co-ordinates of the artboard
+    let x = artboard.frame.x;
+    let y = artboard.frame.y;
+
     // prepare metadata
     let artboardData = {
       title: artboard.name,
@@ -168,6 +172,10 @@ export default function(context) {
       viewportWidth: viewportSize.width,
       viewportHeight: viewportSize.height,
       hotspots: [],
+      artboardX: x,
+      artboardY: y,
+      pageName: artboard.parent.name,
+      pageNameID: artboard.parent.id,
       hasFixedLayers
     };
 
