@@ -32,6 +32,7 @@ export default function(context) {
   let prototypeData = {
     title: null,
     flowStartArtboardId: null,
+    pages: null,
     artboards: {},
   };
 
@@ -95,6 +96,14 @@ export default function(context) {
     let documentName = path.basename(fileURL).replace(/\.[^.]+$/, ''); // strip extension
     prototypeData.title = documentName;
     defaultExportPath = `${documentName}_ExportedFlow`;
+    let pageList = [];
+    document.pages.forEach(page => {
+      pageList.push({
+        pageId: page.id,
+        pageName: page.name
+      });
+    });
+    prototypeData.pages = pageList;
   }
 
   let rootPath = dialog.showSaveDialog(document.sketchObject, {
