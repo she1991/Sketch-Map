@@ -184,7 +184,7 @@ export default function(context) {
       artboardX: x,
       artboardY: y,
       pageName: artboard.parent.name,
-      pageNameID: artboard.parent.id,
+      pageId: artboard.parent.id,
       hasFixedLayers
     };
 
