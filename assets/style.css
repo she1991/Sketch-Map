@@ -1,0 +1,18 @@
+.connector {
+	stroke: rgba(249, 160, 0, 1);
+}
+.arrowhead {
+	stroke: rgba(249, 160, 0, 1);
+	fill: none;
+}
+.hotspot {
+	stroke: rgba(249, 160, 0, 1);
+	fill: rgba(249, 160, 0, 0.2);
+}
+.dot {
+	stroke: rgba(249, 160, 0, 1);
+	fill: rgba(225, 225, 225, 1);
+}
+.artboard-image-background {
+	stroke: fill: rgba(0, 0, 0, 0.8);
+}

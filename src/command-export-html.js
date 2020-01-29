@@ -185,6 +185,7 @@ export default function(context) {
       artboardY: y,
       pageName: artboard.parent.name,
       pageId: artboard.parent.id,
+      artboardId: artboard.id,
       hasFixedLayers
     };
 
@@ -272,7 +273,7 @@ export default function(context) {
   let htmlPath = `${rootPath}/index.html`;
   fs.writeFileSync(htmlPath, makeIndexHtml(context, prototypeData));
 
-  ['jquery.min.js'].forEach(addlFile => {
+  ['jquery.min.js', 'buildmap.js', 'style.css'].forEach(addlFile => {
     fs.copyFileSync(context.plugin.urlForResourceNamed(addlFile).path(), `${rootPath}/${addlFile}`);
   });
 
