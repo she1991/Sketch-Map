@@ -1,9 +1,11 @@
 var pageList = [];
 var globalGutter = 300;
 var orientationVertical = true;
+var svgContainer = undefined;
 
 var maxWidthAllPages = undefined;
 var totalHeight = 0;
+var zoom = undefined;
 
 let linkVertical = d3.linkVertical()
     .x(function(d) { return d.x; })
@@ -104,10 +106,11 @@ function calcPageWeight() {
 }
 
 function initSVG() {
-	let svg = d3.select('.svg-container').append('svg')
-		.attr('class', 'top-svg')
-		.attr('fill', '#616161');
-	let defs = svg.append('defs');
+	let svg = d3.select('.svg-div').append('svg')
+		.attr('class', 'top-svg');
+	svgContainer = svg.append('g')
+			.attr('class', 'svg-container');
+	let defs = svgContainer.append('defs');
 	defs.append('marker')
 	    .attr('id', 'arrowhead')
 	    .attr('class', 'arrowhead')
@@ -135,8 +138,8 @@ function initSVG() {
 		.append('circle')
 		  	.attr('class', 'dot')
 		   	.attr('r', 4);
-	renderArtboards(svg);
-	renderConnectors(svg);
+	renderArtboards(svgContainer);
+	renderConnectors(svgContainer);
 	applyViewBox(svg);
 }
 
@@ -302,4 +305,40 @@ function getMinCoOrd( hotspotKLMN, targetKLMN ) {
 
 function applyViewBox(svg) {
 	svg.attr('viewBox', `${(pageList[0]).minX - 2} ${(pageList[0]).minY - 2} ${maxWidthAllPages + 4} ${totalHeight + 4}`);
+	zoom = d3.zoom()
+      .extent([[(pageList[0]).minX - 2, (pageList[0]).minY - 2], [maxWidthAllPages + 4, totalHeight + 4]])
+      .scaleExtent([0.2, 10])
+      .on("zoom", zoomed);
+	svg.call(zoom);
+}
+
+function zoomed() {
+	svgContainer.attr("transform", d3.event.transform);
+}
+
+function connectorToggleClicked() {
+	let connectorToggleButton = d3.select('.curve-toggle');
+	if( connectorToggleButton.attr('title') === 'Hide connectors' ) {
+		connectorToggleButton
+			.attr('title', 'Show connectors')
+			.attr('class', 'circle-div curve-toggle show-connector');
+		d3.selectAll('.connector')
+			.attr('class', 'connector connector-hidden');
+		d3.selectAll('.hotspot')
+			.attr('class', 'hotspot hotspot-hidden');
+	} else {
+		connectorToggleButton
+			.attr('title', 'Hide connectors')
+			.attr('class', 'circle-div curve-toggle hide-connector');
+		d3.selectAll('.connector')
+			.attr('class', 'connector');
+		d3.selectAll('.hotspot')
+			.attr('class', 'hotspot');
+	}
+}
+
+function fitToScreen() {
+	let svg = d3.select('.top-svg');
+	//svg.remove();
+	svg.transition().duration(1000).call(zoom.transform, d3.zoomIdentity);
 }

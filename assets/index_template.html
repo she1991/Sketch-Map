@@ -10,7 +10,28 @@
   </script>
 </head>
 <body onload="initSVG()">
-  <div class="svg-container">
+  <div class="control-container" >
+  	<div class="circle-div curve-toggle hide-connector" title="Hide connectors" onclick="connectorToggleClicked()">
+  		<svg class="connector-image" width="32px" height="32px" viewBox="0 0 23 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <g id="Artboard" transform="translate(-10.000000, -10.000000)">
+		            <g id="Group" transform="translate(-3.000000, -4.000000)">
+		                <rect id="Rectangle" x="3" y="4" width="42" height="42"></rect>
+		                <text id="s" transform="translate(25.000000, 24.500000) rotate(45.000000) translate(-25.000000, -24.500000) " font-family="AppleSDGothicNeo-Light, Apple SD Gothic Neo" font-size="42" font-weight="300" letter-spacing="-0.672" fill="#F5A623">
+		                    <tspan x="16.747" y="37">s</tspan>
+		                </text>
+		                <line x1="14" y1="26" x2="14" y2="32" id="Line" stroke="#F5A623" stroke-width="2" stroke-linecap="square"></line>
+		                <line x1="14" y1="26" x2="20" y2="26" id="Line-2" stroke="#F5A623" stroke-width="2" stroke-linecap="square"></line>
+		            </g>
+		        </g>
+		    </g>
+		</svg>
+  	</div>
+  	<div class="circle-div fit-screen" title="Re-center" onclick="fitToScreen()">
+  		<svg class="fit-screen-image" xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 0 24 24" width="42"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#ffffff"/></svg>
+  	</div>
+  </div>
+  <div class="svg-div">
   </div>
 </body>
 </html>

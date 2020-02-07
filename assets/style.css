@@ -1,3 +1,20 @@
+body {
+	background-color: #4A4A4A;
+	cursor: grab;
+}
+.svg-div {
+	max-width: 100vw;
+	max-height: 100vh;
+	overflow: hidden;
+}
+.top-svg {
+	max-width: 100vw;
+	max-height: 100vh;
+}
+.control-elements {
+	position: fixed;
+	top: 20px;
+}
 .connector {
 	stroke: rgba(249, 160, 0, 1);
 }
@@ -9,10 +26,50 @@
 	stroke: rgba(249, 160, 0, 1);
 	fill: rgba(249, 160, 0, 0.2);
 }
+.hotspot-hidden {
+	visibility: hidden;
+}
 .dot {
 	stroke: rgba(249, 160, 0, 1);
 	fill: rgba(225, 225, 225, 1);
 }
 .artboard-image-background {
 	stroke: fill: rgba(0, 0, 0, 0.8);
+}
+.control-container {
+	position: fixed;
+	right: 0;
+	z-index: 1;
+	padding-right: 12px;
+}
+.circle-div {
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  background-color: #242527;
+  border: 2px solid #BD10E0;
+  margin: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.circle-div:hover {
+  box-shadow: 8px 8px 28px rgba(0,0,0,0.40), 0 10px 10px rgba(0,0,0,0.40);
+  border: 2px solid #8100F3;
+  background-color: #141414;
+  cursor: pointer;
+}
+.fit-screen-image {
+	margin: 8px;
+}
+.connector-image {
+	margin: 12px;
+}
+.show-connector {
+	background-color: #61656e;
+}
+.show-connector:hover {
+	background-color: #61656e;
+}
+.connector-hidden {
+	visibility: hidden;
 }
