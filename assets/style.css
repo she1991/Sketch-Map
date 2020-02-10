@@ -1,15 +1,15 @@
 body {
-	background-color: #4A4A4A;
+	background-color: #302F2F;
 	cursor: grab;
 }
 .svg-div {
-	max-width: 100vw;
-	max-height: 100vh;
+	width: 100%;
+	height: 100vh;
 	overflow: hidden;
 }
 .top-svg {
-	max-width: 100vw;
-	max-height: 100vh;
+	height: 100%;
+	width: 100%;
 }
 .control-elements {
 	position: fixed;
@@ -43,6 +43,7 @@ body {
 	padding-right: 12px;
 }
 .circle-div {
+  float:right;
   border-radius: 50%;
   width: 58px;
   height: 58px;
@@ -72,4 +73,29 @@ body {
 }
 .connector-hidden {
 	visibility: hidden;
+}
+.help-dialog {
+	height: 54px;
+	width: 283px;
+	background-color: #242527;
+	border: 2px solid #BD10E0;
+	padding-left: 12px;
+	float:left;
+	margin: 16px;
+	border-radius: 8px;
+	font-size: 16px;
+	color: #D8D8D8;
+	font-family: "Arial", "Helvetica";
+}
+.help-dialog-hidden {
+	visibility: hidden;
+}
+.help-dialog-text {
+	float: left;
+}
+.help-dialog-close-button {
+	float: right;
+	margin-top: -6px;
+	padding-right: 12px;
+	cursor: pointer;
 }

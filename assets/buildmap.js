@@ -310,6 +310,7 @@ function applyViewBox(svg) {
       .scaleExtent([0.2, 10])
       .on("zoom", zoomed);
 	svg.call(zoom);
+	svg.transition().duration(1000).call(zoom.transform, d3.zoomIdentity.scale(0.7));
 }
 
 function zoomed() {
@@ -321,24 +322,29 @@ function connectorToggleClicked() {
 	if( connectorToggleButton.attr('title') === 'Hide connectors' ) {
 		connectorToggleButton
 			.attr('title', 'Show connectors')
-			.attr('class', 'circle-div curve-toggle show-connector');
+			.classed('hide-connector', false)
+			.classed('show-connector', true);
 		d3.selectAll('.connector')
-			.attr('class', 'connector connector-hidden');
+			.classed('connector-hidden', true);
 		d3.selectAll('.hotspot')
-			.attr('class', 'hotspot hotspot-hidden');
+			.classed('hotspot-hidden', true);
 	} else {
 		connectorToggleButton
 			.attr('title', 'Hide connectors')
-			.attr('class', 'circle-div curve-toggle hide-connector');
+			.classed('hide-connector', true)
+			.classed('show-connector', false);
 		d3.selectAll('.connector')
-			.attr('class', 'connector');
+			.classed('connector-hidden', false);
 		d3.selectAll('.hotspot')
-			.attr('class', 'hotspot');
+			.classed('hotspot-hidden', false);
 	}
 }
 
 function fitToScreen() {
 	let svg = d3.select('.top-svg');
-	//svg.remove();
 	svg.transition().duration(1000).call(zoom.transform, d3.zoomIdentity);
+}
+
+function closeHelpDialog() {
+	d3.select('.help-dialog').remove();
 }

@@ -273,7 +273,7 @@ export default function(context) {
   let htmlPath = `${rootPath}/index.html`;
   fs.writeFileSync(htmlPath, makeIndexHtml(context, prototypeData));
 
-  ['jquery.min.js', 'buildmap.js', 'style.css'].forEach(addlFile => {
+  ['d3.min.js', 'buildmap.js', 'style.css'].forEach(addlFile => {
     fs.copyFileSync(context.plugin.urlForResourceNamed(addlFile).path(), `${rootPath}/${addlFile}`);
   });
 
