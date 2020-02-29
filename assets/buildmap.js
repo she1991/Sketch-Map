@@ -36,7 +36,6 @@ function initPageList() {
 			maxYArtboardHeight: 0,
 			width: undefined,
 			height: undefined,
-			pageWeigthX: undefined,
 			pageWeigthY: undefined,
 			artboards: []
 		};
@@ -93,15 +92,13 @@ function calcPageWeight() {
 			+ globalGutter;
 		if( prevMinXPoint === undefined && prevMaxYPoint === undefined ) {
 			// first page case
-			pageObj.pageWeigthX = 0;
 			pageObj.pageWeigthY = 0;
 		} else {
-			pageObj.pageWeigthX = prevMinXPoint - pageObj.minX;
-			pageObj.pageWeigthY = prevMaxYPoint - pageObj.minY + globalGutter;
+			pageObj.pageWeigthY = prevMaxYPoint - pageObj.minY;
 		}
 		//save values for previous points
 		prevMinXPoint = pageObj.minX;
-		prevMaxYPoint = pageObj.minY + pageObj.height;
+		prevMaxYPoint = pageObj.minY + pageObj.height + pageObj.pageWeigthY;
 	});
 }
 
@@ -170,13 +167,13 @@ function renderArtboard(pageGroupElement, pageObj, artboard) {
 		.attr('title', artboard.title)
 		.attr('artboardId', artboard.artboardId);
 	artboardGroupElement.append('rect')
-		.attr('x', artboard.artboardX + pageObj.pageWeigthX - 1)
+		.attr('x', artboard.artboardX - 1)
 		.attr('y', artboard.artboardY + pageObj.pageWeigthY - 1)
 		.attr('width', artboard.width + 2)
 		.attr('height', artboard.height + 2)
 		.attr('class', 'artboard-image-background');
 	artboardGroupElement.append('image')
-		.attr('x', artboard.artboardX + pageObj.pageWeigthX)
+		.attr('x', artboard.artboardX)
 		.attr('y', artboard.artboardY + pageObj.pageWeigthY)
 		.attr('width', artboard.width)
 		.attr('height', artboard.height)
@@ -189,7 +186,7 @@ function renderArtboard(pageGroupElement, pageObj, artboard) {
 
 function renderHotSpot(artboardGroupElement, pageObj, artboard, hotspot) {
 	artboardGroupElement.append('rect')
-		.attr('x', artboard.artboardX + hotspot.rectangle.x + pageObj.pageWeigthX)
+		.attr('x', artboard.artboardX + hotspot.rectangle.x)
 		.attr('y', artboard.artboardY + hotspot.rectangle.y + pageObj.pageWeigthY)
 		.attr('width', hotspot.rectangle.width)
 		.attr('height', hotspot.rectangle.height)
@@ -214,7 +211,7 @@ function renderConnectors(svg){
 				let targetHeight = parseInt(targetRect.attr('height'));
 				
 				let points = this.getMinCoOrd(
-					getKLMN(hotspotRect.rectangle.x + pageObj.pageWeigthX + artboard.artboardX, 
+					getKLMN(hotspotRect.rectangle.x + artboard.artboardX, 
 						hotspotRect.rectangle.y + pageObj.pageWeigthY + artboard.artboardY,
 						hotspotRect.rectangle.width,
 						hotspotRect.rectangle.height),
