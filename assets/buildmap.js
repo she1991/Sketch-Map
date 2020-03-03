@@ -307,7 +307,7 @@ function applyViewBox(svg) {
       .scaleExtent([0.2, 10])
       .on("zoom", zoomed);
 	svg.call(zoom);
-	svg.transition().duration(1000).call(zoom.transform, d3.zoomIdentity.scale(0.7));
+	svg.transition().duration(1000).call(zoom.transform, d3.zoomIdentity.translate((maxWidthAllPages-Math.abs(pageList[0].minX))*0.20, (totalHeight-Math.abs(pageList[0].minY))*0.20).scale(0.7));
 }
 
 function zoomed() {
