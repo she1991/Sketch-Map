@@ -1,6 +1,6 @@
 {
   "name": "sketch-map",
-  "description": "Recharge your design sprints with Sketch Map. Export your Sketch prototypes as customizable flow diagrams. Print and share bird's eye views of your Sketch prototypes.",
+  "description": "Export to HTML bird's eye views of your Sketch prototypes.",
   "version": "0.0.1",
   "engines": {
     "sketch": ">=49.0.0"
