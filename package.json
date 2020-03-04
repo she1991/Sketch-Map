@@ -1,6 +1,6 @@
 {
   "name": "sketch-map",
-  "description": "Export to HTML bird's eye views of your Sketch prototypes.",
+  "description": "Get a bird's eye view of your prototype flows.",
   "version": "0.0.1",
   "engines": {
     "sketch": ">=49.0.0"

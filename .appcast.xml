@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
+  	<title>Sketch Map</title>
+	<link>http://sparkle-project.org/files/sparkletestcast.xml</link>
+	<description>Get a bird's eye view of your prototype flows.</description>
+	<language>en</language>
     <item>
       <enclosure url="https://github.com/she1991/Sketch-Map/files/4285058/SketchMap.sketchplugin.zip" sparkle:version="0.0.1"/>
     </item>
