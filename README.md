@@ -1,6 +1,10 @@
 # Sketch Map
 Sketch Map lets you export your prototypes to an HTML flow map. Analyze your prototype as a state diagram or just enjoy the view!
 
+<p align="center">
+  <img src="http://akash.me/Sketch-Map/Screen-Cap-Sketch-Map.png" />
+</p>
+
 # Demo
 [Click Here](http://akash.me/Sketch-Map/)
 
