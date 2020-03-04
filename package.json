@@ -1,7 +1,7 @@
 {
   "name": "sketch-map",
-  "description": "Get a bird's eye view of your prototype flows.",
-  "version": "0.0.1",
+  "description": "Get a bird's eye views of your prototype flows.",
+  "version": "0.0.2",
   "engines": {
     "sketch": ">=49.0.0"
   },
