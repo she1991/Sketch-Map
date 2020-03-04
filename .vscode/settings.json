@@ -1,6 +1,0 @@
-{
-  "search.exclude": {
-    "**/*.sketchplugin": true,
-    "**/node_modules": true
-  }
-}
