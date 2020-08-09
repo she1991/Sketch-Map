@@ -5,8 +5,11 @@
 	<link>http://sparkle-project.org/files/sparkletestcast.xml</link>
 	<description>Get a bird's eye views of your prototype flows.</description>
 	<language>en</language>
+	<item>
+      <enclosure url="https://github.com/she1991/Sketch-Map/releases/download/v0.0.3/SketchMap.sketchplugin.zip" sparkle:version="0.0.3"/>
+    </item>
     <item>
-      <enclosure url="https://github.com/she1991/Sketch-Map/files/4287418/SketchMap.sketchplugin.zip" sparkle:version="0.0.2"/>
+      <enclosure url="https://github.com/she1991/Sketch-Map/files/4285058/SketchMap.sketchplugin.zip" sparkle:version="0.0.2"/>
     </item>
     <item>
       <enclosure url="https://github.com/she1991/Sketch-Map/files/4285058/SketchMap.sketchplugin.zip" sparkle:version="0.0.1"/>
